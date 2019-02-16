@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PanxoraCSharpClient.Models;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using Trader.Models;
 
 namespace PanxoraCSharpClient
 {
