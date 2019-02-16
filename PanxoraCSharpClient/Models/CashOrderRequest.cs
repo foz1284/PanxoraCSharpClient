@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Trader.Models
+namespace PanxoraCSharpClient.Models
 {
     public class CashOrderRequest
     {

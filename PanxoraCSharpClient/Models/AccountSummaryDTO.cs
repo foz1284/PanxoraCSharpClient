@@ -1,4 +1,4 @@
-﻿namespace Trader.Models
+﻿namespace PanxoraCSharpClient.Models
 {
     public class AccountSummaryDTO
     {

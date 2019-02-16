@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
+using PanxoraCSharpClient.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using Trader.Models;
 
-namespace Trader
+namespace PanxoraCSharpClient
 {
     public class PanxoraService
     {
@@ -27,7 +28,7 @@ namespace Trader
             return JsonConvert.DeserializeObject<List<CashBalanceDTO>>(response.Content);
         }
 
-        internal PricingDTO GetMarketDetails(string market)
+        public PricingDTO GetMarketDetails(string market)
         {
             var request = new RestRequest(string.Format("markets/{0}/prices", market), Method.GET);
             request.AddHeader(APIKeyParameterName, APIKey);
