@@ -1,0 +1,9 @@
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\bin\Debug\netstandard2.0\PanxoraCSharpClient.deps.json
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\bin\Debug\netstandard2.0\PanxoraCSharpClient.dll
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\obj\Debug\netstandard2.0\PanxoraCSharpClient.csprojAssemblyReference.cache
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\obj\Debug\netstandard2.0\PanxoraCSharpClient.csproj.CoreCompileInputs.cache
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\obj\Debug\netstandard2.0\PanxoraCSharpClient.AssemblyInfoInputs.cache
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\obj\Debug\netstandard2.0\PanxoraCSharpClient.AssemblyInfo.cs
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\bin\Debug\netstandard2.0\PanxoraCSharpClient.pdb
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\obj\Debug\netstandard2.0\PanxoraCSharpClient.dll
+C:\Users\mforster\Documents\GitHub\PanxoraCSharpClient\PanxoraCSharpClient\obj\Debug\netstandard2.0\PanxoraCSharpClient.pdb
