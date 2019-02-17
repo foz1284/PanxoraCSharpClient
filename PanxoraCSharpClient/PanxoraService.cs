@@ -17,24 +17,6 @@ namespace PanxoraCSharpClient
             APIKey = apiKey;
         }
 
-        public List<CashBalanceDTO> GetCashBalances()
-        {
-            var request = new RestRequest("cash-balances", Method.GET);
-            request.AddHeader(APIKeyParameterName, APIKey);
-            IRestResponse response = client.Execute(request);
-
-            return JsonConvert.DeserializeObject<List<CashBalanceDTO>>(response.Content);
-        }
-
-        public PricingDTO GetMarketDetails(string market)
-        {
-            var request = new RestRequest(string.Format("markets/{0}/prices", market), Method.GET);
-            request.AddHeader(APIKeyParameterName, APIKey);
-            IRestResponse response = client.Execute(request);
-
-            return JsonConvert.DeserializeObject<PricingDTO>(response.Content);
-        }
-
         public OrderDTO CreateSellCashOrder(decimal quantity)
         {
             var cashOrderRequest = new CashOrderRequest
@@ -63,6 +45,24 @@ namespace PanxoraCSharpClient
             };
 
             return CreateCashOrder(cashOrderRequest);
+        }
+
+        public List<CashBalanceDTO> GetCashBalances()
+        {
+            var request = new RestRequest("cash-balances", Method.GET);
+            request.AddHeader(APIKeyParameterName, APIKey);
+            IRestResponse response = client.Execute(request);
+
+            return JsonConvert.DeserializeObject<List<CashBalanceDTO>>(response.Content);
+        }
+
+        public PricingDTO GetMarketDetails(string market)
+        {
+            var request = new RestRequest(string.Format("markets/{0}/prices", market), Method.GET);
+            request.AddHeader(APIKeyParameterName, APIKey);
+            IRestResponse response = client.Execute(request);
+
+            return JsonConvert.DeserializeObject<PricingDTO>(response.Content);
         }
 
         public OrderDTO CreateCashOrder(CashOrderRequest cashOrderRequest)
