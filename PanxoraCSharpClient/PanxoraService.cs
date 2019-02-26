@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace PanxoraCSharpClient
 {
-    public class PanxoraService
+    public class PanxoraService : ITradeService
     {
         readonly IRestClient client;
         private string APIKey;
@@ -21,37 +21,7 @@ namespace PanxoraCSharpClient
             this.audit = audit;
         }
 
-        public OrderDTO CreateSellCashOrder(decimal quantity)
-        {
-            var cashOrderRequest = new CashOrderRequest
-            {
-                buySell = "SELL",
-                externalReference = "string",
-                limitPrice = 1,
-                market = "BTCUSD",
-                orderType = "LIMIT",
-                quantity = quantity
-            };
-
-            return CreateCashOrder(cashOrderRequest);
-        }
-
-        public OrderDTO CreateBuyCashOrder(decimal limitPrice, decimal quantity)
-        {
-            var cashOrderRequest = new CashOrderRequest
-            {
-                buySell = "BUY",
-                externalReference = "string",
-                limitPrice = limitPrice,
-                market = "BTCUSD",
-                orderType = "LIMIT",
-                quantity = quantity
-            };
-
-            return CreateCashOrder(cashOrderRequest);
-        }
-
-        public T Execute<T>(RestRequest request) where T : new()
+        private T Execute<T>(RestRequest request) where T : new()
         {
             request.AddHeader(APIKeyParameterName, APIKey);
             var response = client.Execute<T>(request);
@@ -60,6 +30,14 @@ namespace PanxoraCSharpClient
             {
                 const string message = "Error retrieving response.  Check inner details for more info.";
                 throw new ApplicationException(message, response.ErrorException);
+            }
+
+            if (response.StatusCode != System.Net.HttpStatusCode.OK &&
+                response.StatusCode != System.Net.HttpStatusCode.Created
+                )
+            {
+                string message = "Status Code:" + response.StatusCode.ToString() + Environment.NewLine + response.Content;
+                throw new ApplicationException(message);
             }
 
             return response.Data;
